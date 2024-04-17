@@ -1,27 +1,25 @@
 package at.milgram.games.firstgame;
 
 import org.newdawn.slick.*;
-import org.newdawn.slick.tests.AnimationTest;
 
-public class Rectangles extends BasicGame {
-    private float x;
-    private float y;
+public class ObjectsGame extends BasicGame {
+    private Rectangle rectangle;
+
     private float xO;
     private float yO;
     private float xE;
     private float yE;
     private float speed;
-    private float direction = 1;
+
     private float directionO = 1;
     private float directionE = 1;
-    public Rectangles(String title) {
+    public ObjectsGame(String title) {
         super(title);
     }
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        this.x = 100;
-        this.y = 50;
+        this.rectangle = new Rectangle(100,50,10.0f,1);
         this.xO = 100;
         this.yO = 100;
         this.xE = 50;
@@ -32,6 +30,7 @@ public class Rectangles extends BasicGame {
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
         float move = (float)delta/this.speed;
+        this.rectangle.update(delta);
 
         if(direction==1){
             this.x += move;
@@ -84,14 +83,14 @@ public class Rectangles extends BasicGame {
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        graphics.drawRect(this.x,this.y,100,100);
+        this.rectangle.render(graphics);
         graphics.drawOval(this.xE,this.yE,60,25);
         graphics.drawOval(this.xO,this.yO,100,100);
     }
 
     public static void main(String[] argv) {
         try {
-            AppGameContainer container = new AppGameContainer(new Rectangles("Rectangles"));
+            AppGameContainer container = new AppGameContainer(new ObjectsGame("Rectangles"));
             container.setDisplayMode(800,600,false);
             container.start();
         } catch (SlickException e) {
