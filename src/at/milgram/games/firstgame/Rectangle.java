@@ -2,13 +2,21 @@ package at.milgram.games.firstgame;
 
 import org.newdawn.slick.Graphics;
 
-public class Rectangle {
+import java.util.Random;
+
+public class Rectangle implements Actor{
     private float x;
     private float y;
     private float speed;
     private float direction;
 
-
+    public Rectangle(){
+        Random random = new Random();
+        this.x = random.nextInt(600);
+        this.y = 400;
+        this.speed = 4;
+        this.direction = 1;
+    }
     public Rectangle(float x, float y, float speed, float direction) {
         this.x = x;
         this.y = y;

@@ -2,11 +2,20 @@ package at.milgram.games.firstgame;
 
 import org.newdawn.slick.Graphics;
 
-public class Oval {
+import java.util.Random;
+
+public class Oval implements Actor{
     private float xO;
     private float yO;
     private float speed;
     private float directionO;
+    public Oval(){
+        Random random = new Random();
+        this.xO = random.nextInt(1000);
+        this.yO = random.nextInt(600);
+        this.speed = 4.0f;
+        this.directionO = 1;
+    }
     public Oval(float xO, float yO, float speed, float directionO){
         this.xO = xO;
         this.yO = yO;

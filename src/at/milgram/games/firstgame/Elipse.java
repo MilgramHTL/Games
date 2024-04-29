@@ -2,11 +2,22 @@ package at.milgram.games.firstgame;
 
 import org.newdawn.slick.Graphics;
 
-public class Elipse {
+import java.util.Random;
+
+public class Elipse implements Actor{
     private float xE;
     private float yE;
     private float speed;
     private float directionE;
+
+
+    public Elipse(){
+        Random random = new Random();
+        this.xE = random.nextInt(500);
+        this.yE = random.nextInt(400);
+        this.speed = 6;
+        this.directionE = 1;
+    }
     public Elipse(float xE, float yE, float speed, float directionE){
         this.xE = xE;
         this.yE = yE;
