@@ -15,7 +15,7 @@ public class Rectangle implements Actor{
         this.x = random.nextInt(600);
         this.y = 400;
         this.speed = 4;
-        this.direction = 1;
+        this.direction = 4;
     }
     public Rectangle(float x, float y, float speed, float direction) {
         this.x = x;
@@ -34,26 +34,18 @@ public class Rectangle implements Actor{
 
         if(direction==1){
             this.x += move;
-        } if(x > 400){
-            direction = 2;
         }
 
         if(direction==2){
             this.y += move;
-        } if(y > 200){
-            direction = 3;
         }
 
         if(direction==3){
             this.x -= move;
-        } if(x < 50){
-            direction = 4;
         }
 
         if(direction==4){
             this.y -= move;
-        } if(y < 50){
-            direction = 1;
         }
 
     }

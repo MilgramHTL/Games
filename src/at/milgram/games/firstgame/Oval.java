@@ -7,6 +7,8 @@ import java.util.Random;
 public class Oval implements Actor{
     private float xO;
     private float yO;
+    private float widthO;
+    private float heightO;
     private float speed;
     private float directionO;
     public Oval(){
@@ -15,6 +17,8 @@ public class Oval implements Actor{
         this.yO = random.nextInt(600);
         this.speed = 4.0f;
         this.directionO = 1;
+        this.widthO = 40;
+        this.heightO = 40;
     }
     public Oval(float xO, float yO, float speed, float directionO){
         this.xO = xO;
@@ -24,20 +28,20 @@ public class Oval implements Actor{
     }
 
     public void render(Graphics graphics){
-        graphics.drawOval(this.xO, this.yO, 40, 40);
+        graphics.drawOval(this.xO, this.yO, this.widthO, this.heightO);
     }
 
     public void update(int delta){
         float move = (float)delta/this.speed;
         if(directionO==1){
             this.yO += move;
-        } if(yO > 400){
-            directionO = 2;
         }
         if(directionO==2){
             this.yO -= move;
-        } if(yO < 50){
-            directionO = 1;
+        }
+        if(directionO==1){
+            this.widthO += 0.1;
+            this.heightO += 0.1;
         }
     }
 }

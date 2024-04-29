@@ -16,7 +16,7 @@ public class Elipse implements Actor{
         this.xE = random.nextInt(500);
         this.yE = random.nextInt(400);
         this.speed = 6;
-        this.directionE = 1;
+        this.directionE = 2;
     }
     public Elipse(float xE, float yE, float speed, float directionE){
         this.xE = xE;
@@ -33,13 +33,12 @@ public class Elipse implements Actor{
         float move = (float)delta/this.speed;
         if(directionE==1){
             this.xE += move;
-        } if(xE > 400){
-            directionE = 2;
         }
         if(directionE==2){
             this.xE -= move;
-        } if(xE < 50){
-            directionE = 1;
+        } if(this.xE >= 800 || this.yE >= 800){
+            this.xE = 400;
+            this.yE = 400;
         }
     }
 }
