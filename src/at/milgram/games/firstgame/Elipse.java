@@ -4,41 +4,41 @@ import org.newdawn.slick.Graphics;
 
 import java.util.Random;
 
-public class Elipse implements Actor{
+public class Elipse implements Actor {
     private float xE;
     private float yE;
     private float speed;
     private float directionE;
 
 
-    public Elipse(){
+    public Elipse() {
         Random random = new Random();
         this.xE = random.nextInt(500);
         this.yE = random.nextInt(400);
         this.speed = 6;
         this.directionE = 2;
     }
-    public Elipse(float xE, float yE, float speed, float directionE){
+
+    public Elipse(float xE, float yE, float speed, float directionE) {
         this.xE = xE;
         this.yE = yE;
         this.speed = speed;
         this.directionE = directionE;
     }
 
-    public void render(Graphics graphics){
+    public void render(Graphics graphics) {
         graphics.drawOval(this.xE, this.yE, 60, 25);
     }
 
-    public void update(int delta){
-        float move = (float)delta/this.speed;
-        if(directionE==1){
+    public void update(int delta) {
+        float move = (float) delta / this.speed;
+        if (directionE == 2) {
             this.xE += move;
         }
-        if(directionE==2){
-            this.xE -= move;
-        } if(this.xE >= 800 || this.yE >= 800){
-            this.xE = 400;
-            this.yE = 400;
+
+        if (this.xE >= 800 ) {
+            this.xE = -10;
+            //this.yE = 400;
         }
     }
 }
