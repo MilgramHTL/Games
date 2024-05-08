@@ -32,6 +32,8 @@ public class ObjectsGame extends BasicGame {
             Elipse elipse = new Elipse();
             this.actors.add(elipse);
         }
+        Rocket rocket = new Rocket();
+        this.actors.add(rocket);
     }
 
     @Override
