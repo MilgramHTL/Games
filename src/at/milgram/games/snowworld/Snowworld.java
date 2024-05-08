@@ -9,6 +9,8 @@ import java.util.ArrayList;
 public class Snowworld extends BasicGame {
     private List<Actor> actors;
     private Snowflake snowflake;
+    public static final int SCREEN_WIDTH = 800;
+    public static final int SCREEN_HEIGHT = 600;
 
     public Snowworld(String title) {
         super(title);
@@ -47,7 +49,7 @@ public class Snowworld extends BasicGame {
     public static void main(String[] argv) {
         try {
             AppGameContainer container = new AppGameContainer(new Snowworld("Snowworld"));
-            container.setDisplayMode(800,600,false);
+            container.setDisplayMode(SCREEN_WIDTH,SCREEN_HEIGHT,false);
             container.start();
         } catch (SlickException e) {
             e.printStackTrace();

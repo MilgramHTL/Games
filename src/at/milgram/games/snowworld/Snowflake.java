@@ -16,21 +16,21 @@ public class Snowflake implements Actor {
         this.random = new Random();
         if(size == SIZE.BIG){
             this.size = 8;
-            this.speed = 1;
+            this.speed = 2;
         }
         if(size == SIZE.MIDDLE){
             this.size = 4;
-            this.speed = 2;
+            this.speed = 3;
         }
         if(size == SIZE.SMALL){
             this.size = 2;
-            this.speed = 3;
+            this.speed = 4;
         }
-        randomPosition();
+        setRandomPosition();
     }
-    public void randomPosition(){
-        this.x = random.nextInt(800);
-        this.y = (int) (random.nextDouble() * -400);
+    public void setRandomPosition(){
+        this.x = random.nextInt(Snowworld.SCREEN_WIDTH);
+        this.y = (int) (random.nextDouble() * -Snowworld.SCREEN_HEIGHT);
     }
 
     @Override
@@ -42,8 +42,8 @@ public class Snowflake implements Actor {
     public void update(int delta) {
         float move = (float)delta/this.speed;
         this.y += move;
-        if(this.y > 800){
-            randomPosition();
+        if(this.y > Snowworld.SCREEN_WIDTH){
+            setRandomPosition();
         }
     }
 }
