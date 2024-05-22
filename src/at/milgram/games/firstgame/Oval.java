@@ -1,5 +1,6 @@
 package at.milgram.games.firstgame;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 import java.util.Random;
@@ -31,7 +32,7 @@ public class Oval implements Actor{
         graphics.drawOval(this.xO, this.yO, this.widthO, this.heightO);
     }
 
-    public void update(int delta){
+    public void update(GameContainer gameContainer, int delta){
         float move = (float)delta/this.speed;
         if(directionO==1){
             this.yO += move;

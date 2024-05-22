@@ -1,5 +1,6 @@
 package at.milgram.games.firstgame;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 import java.util.Random;
@@ -29,7 +30,7 @@ public class Rectangle implements Actor{
         graphics.drawRect(this.x,this.y,50,50);
     }
 
-    public void update(int delta){
+    public void update(GameContainer gameContainer, int delta){
         float move = (float)delta/this.speed;
 
         if(direction==1){

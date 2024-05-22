@@ -1,5 +1,6 @@
 package at.milgram.games.firstgame;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 import java.util.Random;
@@ -30,7 +31,7 @@ public class Elipse implements Actor {
         graphics.drawOval(this.xE, this.yE, 60, 25);
     }
 
-    public void update(int delta) {
+    public void update(GameContainer gameContainer, int delta) {
         float move = (float) delta / this.speed;
         if (directionE == 2) {
             this.xE += move;
