@@ -68,7 +68,7 @@ public class SoundTest extends BasicGame {
 		}
 		music = musica = new Music("testdata/SMB-X.XM");
 		//music = musica = new Music("testdata/theme.ogg", true);
-		musicb = new Music("testdata/kirby.ogg", true);
+		musicb = new Music("testdata/Shine.ogg", true);
 		burp = new Sound("testdata/burp.aif");
 		
 		music.play();
