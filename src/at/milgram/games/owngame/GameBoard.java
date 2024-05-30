@@ -8,6 +8,7 @@ import org.newdawn.slick.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GameBoard extends BasicGame {
     private List<Actor> actors;
@@ -44,9 +45,13 @@ public class GameBoard extends BasicGame {
     @Override
     public void keyPressed(int key, char c) {
         if(key == Input.KEY_SPACE){
-            System.out.println("Shoot");
-            Bullet b = new Bullet(this.revolver.getX(),this.revolver.getY());
-            this.actors.add(b);
+            Random random = new Random();
+            int randomInt = random.nextInt(6);
+            if (randomInt == 0) {
+                System.out.println("Shoot");
+                Bullet b = new Bullet(this.revolver.getX(), this.revolver.getY());
+                this.actors.add(b);
+            }
         }
     }
 

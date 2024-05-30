@@ -1,6 +1,7 @@
 package at.milgram.games.owngame;
 
 import org.newdawn.slick.*;
+import java.util.Random;
 
 public class Revolver implements Actor {
     private Image revolverImage;
@@ -16,7 +17,7 @@ public class Revolver implements Actor {
 
     @Override
     public void render(Graphics graphics) {
-        revolverImage.draw(this.x,this.y);
+            revolverImage.draw(this.x,this.y);
     }
 
     @Override
