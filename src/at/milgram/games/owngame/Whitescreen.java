@@ -3,7 +3,7 @@ package at.milgram.games.owngame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class Human implements Actor{
+public class Whitescreen implements Actor{
     @Override
     public void render(Graphics graphics) {
 
