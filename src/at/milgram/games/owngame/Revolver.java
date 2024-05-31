@@ -5,12 +5,16 @@ import java.util.Random;
 
 public class Revolver implements Actor {
     private Image revolverImage;
+    private boolean Collision;
+    private GameBoard gb;
     private float x;
     private float y;
+    private CollissionChecker collissionChecker;
 
     public Revolver() throws SlickException {
         Image tmp = new Image("testdata/revolver.png");
         this.revolverImage = tmp.getScaledCopy(50,50);
+        this.Collision = true;
         this.x = 100;
         this.y = 100;
     }
@@ -34,6 +38,10 @@ public class Revolver implements Actor {
         if (gameContainer.getInput().isKeyDown(Input.KEY_W)){
             this.y--;
         }
+
+        Collision = false;
+        gb.cChecker.equals(this);
+
     }
 
     public float getX() {

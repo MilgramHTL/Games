@@ -13,6 +13,8 @@ import java.util.Random;
 public class GameBoard extends BasicGame {
     private List<Actor> actors;
     private Revolver revolver;
+    public CollissionChecker cChecker;
+    private Human stickman;
 
     public GameBoard(String title) {
         super(title);
@@ -22,11 +24,18 @@ public class GameBoard extends BasicGame {
     public void init(GameContainer gameContainer) throws SlickException {
         this.actors = new ArrayList<>();
 
+        CollissionChecker collissionChecker = new CollissionChecker();
+        this.cChecker = collissionChecker;
+        this.actors.add(cChecker);
+
 
 
         Revolver revolver = new Revolver();
         this.revolver = revolver;
         this.actors.add(revolver);
+        Human stickman_1 = new Human();
+        this.stickman = stickman_1;
+        this.actors.add(stickman);
     }
 
     @Override
