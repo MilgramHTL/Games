@@ -5,18 +5,20 @@ import java.util.Random;
 
 public class Revolver implements Actor {
     private Image revolverImage;
-    private boolean Collision;
     private GameBoard gb;
     private float x;
     private float y;
-    private CollissionChecker collissionChecker;
+    private float width,height;
 
-    public Revolver() throws SlickException {
+
+    public Revolver(GameBoard gb) throws SlickException {
         Image tmp = new Image("testdata/revolver.png");
+        this.width = 50;
+        this.height = 50;
         this.revolverImage = tmp.getScaledCopy(50,50);
-        this.Collision = true;
         this.x = 100;
         this.y = 100;
+        this.gb = gb;
     }
 
     @Override
@@ -39,9 +41,6 @@ public class Revolver implements Actor {
             this.y--;
         }
 
-        Collision = false;
-        gb.cChecker.equals(this);
-
     }
 
     public float getX() {
@@ -50,5 +49,13 @@ public class Revolver implements Actor {
 
     public float getY() {
         return y;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public float getHeight() {
+        return height;
     }
 }
