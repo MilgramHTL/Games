@@ -1,6 +1,7 @@
 package at.milgram.games.owngame;
 
 import at.milgram.games.owngame.Actor;
+import at.milgram.games.owngame.CollisionActor;
 import at.milgram.games.owngame.GameBoard;
 import at.milgram.games.owngame.Bullet;
 import at.milgram.games.owngame.Revolver;
@@ -12,8 +13,9 @@ import java.util.Random;
 
 public class GameBoard extends BasicGame {
     private List<Actor> actors;
+    private List<CollisionActor> collisionActors;
     private Revolver revolver;
-    private Human stickman;
+    private Human human;
 
     public GameBoard(String title) {
         super(title);
@@ -22,13 +24,14 @@ public class GameBoard extends BasicGame {
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
         this.actors = new ArrayList<>();
+        this.collisionActors = new ArrayList<>();
 
         Revolver revolver = new Revolver(this);
         this.revolver = revolver;
         this.actors.add(revolver);
-        Human stickman_1 = new Human();
-        this.stickman = stickman_1;
-        this.actors.add(stickman);
+        Human human1 = new Human();
+        this.human = human1;
+        this.collisionActors.add(human);
     }
 
     @Override
@@ -36,6 +39,8 @@ public class GameBoard extends BasicGame {
         for (Actor actor: this.actors) {
             actor.update(gameContainer, delta);
         }
+        //for loop for Human because the Bullet should know the Human
+        //Collision zwischen Revolver und Human einbauen
     }
 
     @Override
