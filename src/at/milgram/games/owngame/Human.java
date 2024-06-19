@@ -16,7 +16,7 @@ public class Human implements CollisionActor{
     private List<CollisionActor> collisionActors;
 
     public Human() throws SlickException {
-        Image tmp = new Image("testdata/human.png");
+        Image tmp = new Image("testdata/icon.png");
         this.HumanImage = tmp.getScaledCopy(50,100);
         this.x = 20;
         this.y = 20;
@@ -57,6 +57,6 @@ public class Human implements CollisionActor{
 
     @Override
     public Shape getShape() {
-        return null;
+        return this.shapeHuman;
     }
 }

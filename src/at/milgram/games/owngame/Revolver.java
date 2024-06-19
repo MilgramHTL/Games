@@ -12,7 +12,7 @@ public class Revolver implements Actor {
 
 
     public Revolver(GameBoard gb) throws SlickException {
-        Image tmp = new Image("testdata/revolver.png");
+        Image tmp = new Image("testdata/icon.png");
         this.width = 50;
         this.height = 50;
         this.revolverImage = tmp.getScaledCopy(50,50);

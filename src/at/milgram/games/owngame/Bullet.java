@@ -36,9 +36,9 @@ public class Bullet implements CollisionActor{
 
     @Override
     public Shape getShape() {
-        return null;
+        return this.bulletShape;
     }
-    private void addCollisionActor(CollisionActor collisionActor){
+    public void addCollisionActor(CollisionActor collisionActor){
         this.collisionActorList.add(collisionActor);
     }
 
